@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+
+const pressedKey = [];
+const secretCode = 'katy'
+window.addEventListener('keyup', (event) => {
+  console.log(event.key)
+  pressedKey.push(event.key)
+  pressedKey.splice(-secretCode.length -1, pressedKey.length - secretCode.length)
+  if(pressedKey.join('').includes(secretCode)) {
+    console.log('DING DING!')
+    cornify_add();
+  }
+  console.log(pressedKey)
+})
+
 </script>
 </body>
 </html>
